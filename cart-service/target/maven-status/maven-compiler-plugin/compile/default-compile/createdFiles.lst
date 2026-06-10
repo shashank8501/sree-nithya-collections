@@ -1,0 +1,7 @@
+com\aurorajewels\cart\ProductDto.class
+com\aurorajewels\cart\CartController.class
+com\aurorajewels\cart\CartSummary.class
+com\aurorajewels\cart\HealthController.class
+com\aurorajewels\cart\CartItem.class
+com\aurorajewels\cart\CartServiceApplication.class
+com\aurorajewels\cart\AddCartItemRequest.class

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sree Nithya Collections Orders</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">S</span>
+        <span>Sree Nithya Admin</span>
+      </a>
+      <nav class="main-nav" aria-label="Admin navigation">
+        <a href="/">Storefront</a>
+        <a href="/admin">Products</a>
+        <a href="/admin/orders">Orders</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-hero">
+        <div>
+          <p class="eyebrow">Order database</p>
+          <h1>Orders</h1>
+          <p>Review placed orders with customer details, totals, status, and saved line items.</p>
+        </div>
+      </section>
+
+      <section class="admin-products order-admin-panel">
+        <div class="admin-toolbar">
+          <h2>Recent Orders</h2>
+          <button class="plain-button" id="refreshOrders" type="button">Refresh</button>
+        </div>
+        <div class="admin-product-list" id="orderList"></div>
+      </section>
+    </main>
+
+    <script th:src="@{/js/admin-orders.js}"></script>
+  </body>
+</html>

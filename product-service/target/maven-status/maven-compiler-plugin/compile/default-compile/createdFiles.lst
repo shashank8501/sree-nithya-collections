@@ -1,0 +1,6 @@
+com\aurorajewels\product\Product.class
+com\aurorajewels\product\ProductController.class
+com\aurorajewels\product\ProductRepository.class
+com\aurorajewels\product\ProductServiceApplication.class
+com\aurorajewels\product\HealthController.class
+com\aurorajewels\product\ProductDataLoader.class

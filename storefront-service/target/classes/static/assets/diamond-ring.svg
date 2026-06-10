@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Diamond solitaire ring">
+  <rect width="900" height="900" fill="#f1f4f2"/>
+  <ellipse cx="450" cy="655" rx="210" ry="52" fill="#394743" opacity=".14"/>
+  <circle cx="450" cy="470" r="205" fill="none" stroke="#a9aaa7" stroke-width="88"/>
+  <circle cx="450" cy="470" r="205" fill="none" stroke="#eef3f2" stroke-width="62"/>
+  <circle cx="450" cy="470" r="128" fill="#e7eeee"/>
+  <rect x="390" y="178" width="120" height="112" rx="38" fill="#dce5e4" stroke="#8f9b99" stroke-width="6"/>
+  <polygon points="450,96 528,176 450,262 372,176" fill="#eaf7f7" stroke="#ffffff" stroke-width="8"/>
+  <path d="M398 176h104M450 96v166M398 176l52 86 52-86" stroke="#aac2c2" stroke-width="5" fill="none"/>
+</svg>

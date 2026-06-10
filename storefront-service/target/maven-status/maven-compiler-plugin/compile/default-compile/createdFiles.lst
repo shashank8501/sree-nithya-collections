@@ -1,0 +1,11 @@
+com\aurorajewels\storefront\WebConfig.class
+com\aurorajewels\storefront\CustomerController.class
+com\aurorajewels\storefront\CustomerUserDetailsService.class
+com\aurorajewels\storefront\HealthController.class
+com\aurorajewels\storefront\SecurityConfig.class
+com\aurorajewels\storefront\UploadController.class
+com\aurorajewels\storefront\CustomerRepository.class
+com\aurorajewels\storefront\StorefrontServiceApplication.class
+com\aurorajewels\storefront\HomeController.class
+com\aurorajewels\storefront\StorefrontApiController.class
+com\aurorajewels\storefront\Customer.class

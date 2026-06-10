@@ -1,0 +1,8 @@
+com\aurorajewels\order\CreateOrderRequest.class
+com\aurorajewels\order\OrderController.class
+com\aurorajewels\order\HealthController.class
+com\aurorajewels\order\OrderServiceApplication.class
+com\aurorajewels\order\OrderRepository.class
+com\aurorajewels\order\OrderItemRequest.class
+com\aurorajewels\order\OrderItem.class
+com\aurorajewels\order\Order.class

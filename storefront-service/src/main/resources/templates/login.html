@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sree Nithya Admin Login</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">S</span>
+        <span>Sree Nithya Admin</span>
+      </a>
+      <nav class="main-nav" aria-label="Login navigation">
+        <a href="/">Storefront</a>
+      </nav>
+    </header>
+
+    <main class="login-shell">
+      <form class="admin-form login-form" th:action="@{/login}" method="post">
+        <p class="eyebrow">Secure admin</p>
+        <h1>Login</h1>
+        <p class="login-note">Use the demo admin account to manage jewelry products.</p>
+        <label>Username <input name="username" required autocomplete="username" value="admin" /></label>
+        <label>Password <input name="password" type="password" required autocomplete="current-password" /></label>
+        <button class="primary-btn wide" type="submit">Login</button>
+        <p class="order-message" th:if="${param.error}">Invalid username or password.</p>
+        <p class="login-note">Demo credentials: admin / admin123</p>
+      </form>
+    </main>
+  </body>
+</html>

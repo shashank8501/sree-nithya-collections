@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Aqua pendant necklace">
+  <rect width="900" height="900" fill="#eef4f1"/>
+  <ellipse cx="450" cy="704" rx="210" ry="50" fill="#2f4e4c" opacity=".13"/>
+  <path d="M185 260c70 250 460 250 530 0" fill="none" stroke="#d9aa45" stroke-width="24" stroke-linecap="round"/>
+  <path d="M450 520v96" stroke="#b8842d" stroke-width="14" stroke-linecap="round"/>
+  <polygon points="450,598 535,680 450,775 365,680" fill="#1d7883" stroke="#fff0c9" stroke-width="8"/>
+  <path d="M405 680l45-66 45 66-45 70z" fill="#3aa0aa" opacity=".55"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Emerald bead bracelet">
+  <rect width="900" height="900" fill="#f5efe1"/>
+  <ellipse cx="450" cy="620" rx="285" ry="62" fill="#5f4c2b" opacity=".14"/>
+  <ellipse cx="450" cy="450" rx="275" ry="175" fill="none" stroke="#fff0c9" stroke-width="10"/>
+  <g>
+    <circle cx="725" cy="450" r="30" fill="#1b8b73"/>
+    <circle cx="684" cy="550" r="30" fill="#e3b64e"/>
+    <circle cx="584" cy="610" r="30" fill="#e3b64e"/>
+    <circle cx="450" cy="625" r="30" fill="#1b8b73"/>
+    <circle cx="316" cy="610" r="30" fill="#e3b64e"/>
+    <circle cx="216" cy="550" r="30" fill="#e3b64e"/>
+    <circle cx="175" cy="450" r="30" fill="#1b8b73"/>
+    <circle cx="216" cy="350" r="30" fill="#e3b64e"/>
+    <circle cx="316" cy="290" r="30" fill="#e3b64e"/>
+    <circle cx="450" cy="275" r="30" fill="#1b8b73"/>
+    <circle cx="584" cy="290" r="30" fill="#e3b64e"/>
+    <circle cx="684" cy="350" r="30" fill="#e3b64e"/>
+  </g>
+</svg>

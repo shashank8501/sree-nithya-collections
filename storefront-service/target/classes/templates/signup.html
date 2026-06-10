@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sree Nithya Signup</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/"><span class="brand-mark">S</span><span>Sree Nithya Collections</span></a>
+      <nav class="main-nav"><a href="/">Storefront</a><a href="/login">Login</a></nav>
+    </header>
+    <main class="login-shell">
+      <form class="admin-form login-form" th:action="@{/signup}" method="post">
+        <p class="eyebrow">Customer account</p>
+        <h1>Signup</h1>
+        <p class="login-note">Create a customer account for future order history and checkout features.</p>
+        <label>Name <input name="name" required autocomplete="name" /></label>
+        <label>Email <input name="email" type="email" required autocomplete="email" /></label>
+        <label>Password <input name="password" type="password" required autocomplete="new-password" /></label>
+        <button class="primary-btn wide" type="submit">Create account</button>
+        <p class="order-message" th:if="${error}" th:text="${error}"></p>
+      </form>
+    </main>
+  </body>
+</html>

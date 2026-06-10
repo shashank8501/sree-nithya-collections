@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Ruby halo ring">
+  <rect width="900" height="900" fill="#f7efe5"/>
+  <ellipse cx="450" cy="655" rx="210" ry="52" fill="#6d4a25" opacity=".16"/>
+  <circle cx="450" cy="470" r="205" fill="none" stroke="#9c6b20" stroke-width="88"/>
+  <circle cx="450" cy="470" r="205" fill="none" stroke="#e6bd58" stroke-width="64"/>
+  <circle cx="450" cy="470" r="126" fill="#f6eadb"/>
+  <rect x="390" y="178" width="120" height="112" rx="38" fill="#ddb34d" stroke="#8c5f20" stroke-width="6"/>
+  <polygon points="450,104 520,174 450,254 380,174" fill="#a6274d" stroke="#fff3cb" stroke-width="8"/>
+  <path d="M412 170l38-45 40 45-40 56z" fill="#c74368" opacity=".55"/>
+</svg>

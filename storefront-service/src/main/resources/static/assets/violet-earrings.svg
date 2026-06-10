@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Violet drop earrings">
+  <rect width="900" height="900" fill="#f4eff3"/>
+  <ellipse cx="450" cy="700" rx="255" ry="54" fill="#4d4052" opacity=".12"/>
+  <g fill="none" stroke="#d9aa45" stroke-width="20">
+    <circle cx="330" cy="235" r="70"/>
+    <circle cx="570" cy="235" r="70"/>
+  </g>
+  <g stroke="#b8842d" stroke-width="12" stroke-linecap="round">
+    <path d="M330 305v175"/>
+    <path d="M570 305v175"/>
+  </g>
+  <g stroke="#fff0c9" stroke-width="8">
+    <polygon points="330,470 410,550 330,650 250,550" fill="#6b4a9b"/>
+    <polygon points="570,470 650,550 570,650 490,550" fill="#6b4a9b"/>
+  </g>
+</svg>

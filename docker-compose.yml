@@ -1,0 +1,87 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: aurora
+      MYSQL_PASSWORD: aurora
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./docker/mysql-init:/docker-entrypoint-initdb.d
+
+  product-service:
+    build:
+      context: .
+      args:
+        JAR_FILE: product-service/target/product-service-0.0.1-SNAPSHOT.jar
+    environment:
+      SPRING_PROFILES_ACTIVE: mysql
+      PRODUCT_DB_URL: jdbc:mysql://mysql:3306/sree_nithya_products
+      PRODUCT_DB_USERNAME: aurora
+      PRODUCT_DB_PASSWORD: aurora
+      INTERNAL_API_TOKEN: change-this-token
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+
+  cart-service:
+    build:
+      context: .
+      args:
+        JAR_FILE: cart-service/target/cart-service-0.0.1-SNAPSHOT.jar
+    environment:
+      PRODUCT_SERVICE_URL: http://product-service:8081
+    ports:
+      - "8082:8082"
+    depends_on:
+      - product-service
+
+  order-service:
+    build:
+      context: .
+      args:
+        JAR_FILE: order-service/target/order-service-0.0.1-SNAPSHOT.jar
+    environment:
+      SPRING_PROFILES_ACTIVE: mysql
+      ORDER_DB_URL: jdbc:mysql://mysql:3306/sree_nithya_orders
+      ORDER_DB_USERNAME: aurora
+      ORDER_DB_PASSWORD: aurora
+      INTERNAL_API_TOKEN: change-this-token
+    ports:
+      - "8083:8083"
+    depends_on:
+      - mysql
+
+  storefront-service:
+    build:
+      context: .
+      args:
+        JAR_FILE: storefront-service/target/storefront-service-0.0.1-SNAPSHOT.jar
+    environment:
+      SPRING_PROFILES_ACTIVE: mysql
+      PRODUCT_SERVICE_URL: http://product-service:8081
+      CART_SERVICE_URL: http://cart-service:8082
+      ORDER_SERVICE_URL: http://order-service:8083
+      STOREFRONT_DB_URL: jdbc:mysql://mysql:3306/sree_nithya_storefront
+      STOREFRONT_DB_USERNAME: aurora
+      STOREFRONT_DB_PASSWORD: aurora
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: change-me
+      INTERNAL_API_TOKEN: change-this-token
+    ports:
+      - "8080:8080"
+    volumes:
+      - storefront-uploads:/app/uploads
+    depends_on:
+      - product-service
+      - cart-service
+      - order-service
+
+volumes:
+  mysql-data:
+  storefront-uploads:

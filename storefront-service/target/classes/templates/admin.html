@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sree Nithya Collections Admin</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">S</span>
+        <span>Sree Nithya Admin</span>
+      </a>
+      <nav class="main-nav" aria-label="Admin navigation">
+        <a href="/">Storefront</a>
+        <a href="/admin">Products</a>
+        <a href="/admin/orders">Orders</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-hero">
+        <div>
+          <p class="eyebrow">Database management</p>
+          <h1>Products</h1>
+          <p>Add, edit, and delete jewelry products stored in the product-service database.</p>
+        </div>
+      </section>
+
+      <section class="admin-layout">
+        <form class="admin-form" id="productForm">
+          <input type="hidden" name="id" />
+          <h2 id="formTitle">Add Product</h2>
+          <label>Name <input name="name" required placeholder="Ruby Halo Ring" /></label>
+          <label>Category
+            <select name="category" required>
+              <option value="rings">Rings</option>
+              <option value="necklaces">Necklaces</option>
+              <option value="earrings">Earrings</option>
+              <option value="bracelets">Bracelets</option>
+            </select>
+          </label>
+          <label>Price <input name="price" required type="number" min="1" placeholder="248" /></label>
+          <label>Image path <input name="image" required placeholder="/assets/ruby-ring.svg" /></label>
+          <label>Upload image <input id="imageUpload" type="file" accept="image/*" /></label>
+          <label>Description <textarea name="description" required rows="4"></textarea></label>
+          <div class="form-actions">
+            <button class="primary-btn" type="submit">Save product</button>
+            <button class="plain-button" id="resetForm" type="button">Reset</button>
+          </div>
+          <p class="order-message" id="adminMessage"></p>
+        </form>
+
+        <div class="admin-products">
+          <div class="admin-toolbar">
+            <h2>Current Products</h2>
+            <button class="plain-button" id="refreshProducts" type="button">Refresh</button>
+          </div>
+          <div class="admin-product-list" id="adminProductList"></div>
+        </div>
+      </section>
+    </main>
+
+    <script th:src="@{/js/admin.js(v=2)}"></script>
+  </body>
+</html>
