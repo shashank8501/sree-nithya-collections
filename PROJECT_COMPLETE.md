@@ -19,6 +19,7 @@ The project is complete as a local full-stack Spring Boot microservices jewelry 
 - H2 local databases for products, orders, and customer accounts
 - MySQL-ready profiles
 - Docker Compose setup for MySQL and all services
+- Render single-service deployment setup
 - Internal token protection between storefront and backend services
 - Configurable admin credentials and internal token
 

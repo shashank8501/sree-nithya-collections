@@ -158,10 +158,7 @@ Fast deployment steps:
 1. Push the `jewelry-microservices` folder to a GitHub repository.
 2. In Render, choose **New > Blueprint**.
 3. Select the GitHub repository.
-4. Render will detect `render.yaml` and create four web services:
-   - `sree-nithya-product-service`
-   - `sree-nithya-cart-service`
-   - `sree-nithya-order-service`
+4. Render will detect `render.yaml` and create one web service:
    - `sree-nithya-collections`
 5. Set `ADMIN_PASSWORD` when Render asks for it.
 6. Deploy.
@@ -174,6 +171,7 @@ https://sree-nithya-collections.onrender.com
 Render deployment notes:
 
 - The Render free plan may spin down inactive services, so first requests can be slow.
+- The Render setup runs all four Spring Boot services inside one Render web service for a simpler free deployment.
 - The included Render profile uses H2 files under `/tmp`, which is fine for a demo but not persistent production storage.
 - For production, connect Render PostgreSQL or an external MySQL database and update the service environment variables.
 - Change `INTERNAL_API_TOKEN` from `demo-internal-token` before real public use.

@@ -1,0 +1,14 @@
+FROM maven:3.9.6-eclipse-temurin-11 AS build
+WORKDIR /workspace
+COPY . .
+RUN mvn -q -DskipTests package
+
+FROM eclipse-temurin:11-jre
+WORKDIR /app
+COPY --from=build /workspace/product-service/target/product-service-0.0.1-SNAPSHOT.jar product-service.jar
+COPY --from=build /workspace/cart-service/target/cart-service-0.0.1-SNAPSHOT.jar cart-service.jar
+COPY --from=build /workspace/order-service/target/order-service-0.0.1-SNAPSHOT.jar order-service.jar
+COPY --from=build /workspace/storefront-service/target/storefront-service-0.0.1-SNAPSHOT.jar storefront-service.jar
+COPY render-start.sh render-start.sh
+RUN chmod +x render-start.sh
+CMD ["./render-start.sh"]

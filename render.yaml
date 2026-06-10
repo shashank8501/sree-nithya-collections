@@ -1,59 +1,12 @@
 services:
   - type: web
-    name: sree-nithya-product-service
-    runtime: docker
-    plan: free
-    dockerfilePath: ./product-service/Dockerfile.render
-    dockerContext: .
-    healthCheckPath: /health
-    envVars:
-      - key: SPRING_PROFILES_ACTIVE
-        value: render
-      - key: INTERNAL_API_TOKEN
-        value: demo-internal-token
-
-  - type: web
-    name: sree-nithya-cart-service
-    runtime: docker
-    plan: free
-    dockerfilePath: ./cart-service/Dockerfile.render
-    dockerContext: .
-    healthCheckPath: /health
-    envVars:
-      - key: SPRING_PROFILES_ACTIVE
-        value: render
-      - key: PRODUCT_SERVICE_URL
-        value: https://sree-nithya-product-service.onrender.com
-
-  - type: web
-    name: sree-nithya-order-service
-    runtime: docker
-    plan: free
-    dockerfilePath: ./order-service/Dockerfile.render
-    dockerContext: .
-    healthCheckPath: /health
-    envVars:
-      - key: SPRING_PROFILES_ACTIVE
-        value: render
-      - key: INTERNAL_API_TOKEN
-        value: demo-internal-token
-
-  - type: web
     name: sree-nithya-collections
     runtime: docker
     plan: free
-    dockerfilePath: ./storefront-service/Dockerfile.render
+    dockerfilePath: ./Dockerfile.render
     dockerContext: .
     healthCheckPath: /health
     envVars:
-      - key: SPRING_PROFILES_ACTIVE
-        value: render
-      - key: PRODUCT_SERVICE_URL
-        value: https://sree-nithya-product-service.onrender.com
-      - key: CART_SERVICE_URL
-        value: https://sree-nithya-cart-service.onrender.com
-      - key: ORDER_SERVICE_URL
-        value: https://sree-nithya-order-service.onrender.com
       - key: INTERNAL_API_TOKEN
         value: demo-internal-token
       - key: ADMIN_USERNAME
