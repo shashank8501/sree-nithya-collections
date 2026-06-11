@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sree Nithya Collections</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">S</span>
+        <span>Sree Nithya Collections</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#shop">Shop</a>
+        <a href="#collections">Collections</a>
+        <a href="#care">Care</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+      </nav>
+      <div class="header-actions">
+        <label class="search-box">
+          <span class="sr-only">Search jewelry</span>
+          <input id="searchInput" type="search" placeholder="Search jewelry" />
+        </label>
+        <button class="cart-button" id="cartButton" type="button">Cart <span id="cartCount">0</span></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img src="/assets/hero-jewelry.svg" alt="Gold jewelry collection" />
+        <div class="hero-copy">
+          <p class="eyebrow">Fine jewelry, made personal</p>
+          <h1>Sree Nithya Collections</h1>
+          <p>Elegant rings, necklaces, earrings, and bracelets crafted for gifts, weddings, and everyday shine.</p>
+          <a class="primary-btn" href="#shop">Shop collection</a>
+        </div>
+      </section>
+
+      <section class="trust-strip">
+        <div><strong>Free shipping</strong><span>Orders over $150</span></div>
+        <div><strong>Certified pieces</strong><span>Rings, necklaces, earrings</span></div>
+        <div><strong>Microservice backend</strong><span>Product, cart, and order APIs</span></div>
+      </section>
+
+      <section class="shop-section" id="shop">
+        <div class="section-heading">
+          <p class="eyebrow">Curated pieces</p>
+          <h2>Shop Jewelry</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filter products">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="rings" type="button">Rings</button>
+          <button class="filter" data-filter="necklaces" type="button">Necklaces</button>
+          <button class="filter" data-filter="earrings" type="button">Earrings</button>
+          <button class="filter" data-filter="bracelets" type="button">Bracelets</button>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="collections" id="collections">
+        <div>
+          <p class="eyebrow">Gift-ready sets</p>
+          <h2>Build a matching look</h2>
+          <p>Pair rings with gemstone earrings or choose a complete set for birthdays, anniversaries, and bridal events.</p>
+        </div>
+        <div class="collection-list">
+          <article><span>01</span><h3>Bridal Glow</h3><p>Classic stones and polished silhouettes.</p></article>
+          <article><span>02</span><h3>Evening Color</h3><p>Deep jewel tones for celebrations.</p></article>
+          <article><span>03</span><h3>Daily Shine</h3><p>Lightweight pieces made for repeat wear.</p></article>
+        </div>
+      </section>
+
+      <section class="care" id="care">
+        <article><h3>Layering necklaces</h3><p>Mix chain weights and keep pendant lengths separated.</p></article>
+        <article><h3>Ring sizing</h3><p>Measure in the evening and compare against your best-fitting ring.</p></article>
+        <article><h3>Gold care</h3><p>Store pieces dry and wipe gently after wear.</p></article>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+        <div class="cart-head">
+          <h2 id="cartTitle">Your Cart</h2>
+          <button id="closeCart" class="plain-button" type="button">Close</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <form class="checkout-form" id="checkoutForm">
+          <label>Name <input name="customerName" required /></label>
+          <label>Email <input name="email" type="email" required /></label>
+          <label>Payment
+            <select name="paymentMethod" required>
+              <option value="Mock Card">Demo card payment</option>
+              <option value="Cash On Delivery">Cash on delivery</option>
+            </select>
+          </label>
+          <div class="cart-total"><span>Subtotal</span><strong id="cartTotal">$0</strong></div>
+          <button class="primary-btn wide" type="submit">Place order</button>
+          <p class="order-message" id="orderMessage"></p>
+        </form>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      <strong>Sree Nithya Collections</strong>
+      <span>Spring Boot storefront with microservices backend</span>
+      <a href="/admin">Admin</a>
+      <a href="/account">Account</a>
+    </footer>
+
+    <script src="/js/shop.js"></script>
+  </body>
+</html>
