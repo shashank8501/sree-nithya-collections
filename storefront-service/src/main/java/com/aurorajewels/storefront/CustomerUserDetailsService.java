@@ -36,7 +36,7 @@ public class CustomerUserDetailsService implements UserDetailsService {
           .build();
     }
 
-    return customerRepository.findByEmail(username)
+    return customerRepository.findByEmailIgnoreCase(username.trim())
         .map(customer -> new User(customer.getEmail(), customer.getPassword(),
             Collections.singletonList(new SimpleGrantedAuthority("ROLE_CUSTOMER"))))
         .orElseThrow(() -> new UsernameNotFoundException(username));

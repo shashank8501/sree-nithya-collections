@@ -27,15 +27,21 @@ public class CustomerController {
                          @RequestParam String email,
                          @RequestParam String password,
                          Model model) {
-    if (customerRepository.existsByEmail(email)) {
+    String normalizedEmail = email.trim().toLowerCase();
+    if (customerRepository.existsByEmailIgnoreCase(normalizedEmail)) {
       model.addAttribute("error", "Email is already registered.");
       return "signup";
     }
-    Customer customer = new Customer();
-    customer.setName(name);
-    customer.setEmail(email);
-    customer.setPassword(passwordEncoder.encode(password));
-    customerRepository.save(customer);
+    try {
+      Customer customer = new Customer();
+      customer.setName(name.trim());
+      customer.setEmail(normalizedEmail);
+      customer.setPassword(passwordEncoder.encode(password));
+      customerRepository.save(customer);
+    } catch (RuntimeException ex) {
+      model.addAttribute("error", "Could not create account. Please try another email.");
+      return "signup";
+    }
     return "redirect:/login?registered";
   }
 

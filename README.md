@@ -25,12 +25,14 @@ H2 console is enabled for the database-backed services:
 
 - Product DB console: `http://localhost:8081/h2-console`
 - Order DB console: `http://localhost:8083/h2-console`
+- Customer DB console: `http://localhost:8080/h2-console`
 
 Use these JDBC URLs in the H2 console:
 
 ```text
 jdbc:h2:file:./data/product-db
 jdbc:h2:file:./data/order-db
+jdbc:h2:file:./data/storefront-db
 ```
 
 Username is `sa` and password is blank.
@@ -171,8 +173,9 @@ https://sree-nithya-collections.onrender.com
 Render deployment notes:
 
 - The Render free plan may spin down inactive services, so first requests can be slow.
-- The Render setup runs all four Spring Boot services inside one Render web service for a simpler free deployment.
+- The Render setup runs only `storefront-service`; it uses built-in demo APIs for products, cart, and orders to fit the free plan.
 - The included Render profile uses H2 files under `/tmp`, which is fine for a demo but not persistent production storage.
+- In lightweight Render mode, product/cart/order data is in-memory for stability on the free plan; customer accounts use the storefront H2 database under `/tmp`.
 - For production, connect Render PostgreSQL or an external MySQL database and update the service environment variables.
 - Change `INTERNAL_API_TOKEN` from `demo-internal-token` before real public use.
 
